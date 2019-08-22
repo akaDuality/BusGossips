@@ -10,7 +10,7 @@ import Foundation
 
 struct Driver: Equatable {
     let route: [Int]
-    let gossips: [String]
+    var gossips: [String]
     
     func stop(at minute: Int) -> Int {
         return route[minute % route.count]
@@ -19,6 +19,10 @@ struct Driver: Equatable {
     init(route: [Int], gossip: String = UUID().uuidString) {
         self.route = route
         self.gossips = [gossip]
+    }
+    
+    mutating func hearGossips(from driver: Driver) {
+        self.gossips.append(contentsOf: driver.gossips)
     }
 }
 

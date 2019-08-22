@@ -24,7 +24,11 @@ import XCTest
 
 class BusGossipsTests: XCTestCase {
     
-    let driver = Driver(route: [3, 1, 2, 3])
+    var driver: Driver!
+    
+    override func setUp() {
+        driver = Driver(route: [3, 1, 2, 3])
+    }
     
     func test_driverHasRoute() {
         XCTAssertEqual(driver.route, [3, 1, 2, 3])
@@ -50,6 +54,14 @@ class BusGossipsTests: XCTestCase {
         let driver = Driver(route: [1, 2], gossip: gossip)
         
         XCTAssertEqual(driver.gossips, [gossip])
+    }
+    
+    func test_driverCanKnowNewGossip() {
+        let driver2 = Driver(route: [3, 2, 3, 1])
+        
+        driver.hearGossips(from: driver2)
+        
+        XCTAssertEqual(2, driver.gossips.count)
     }
 }
 
@@ -94,6 +106,4 @@ class CityTests: XCTestCase {
     }
     
     // MARK: - Gossips
-    
-    
 }
