@@ -21,9 +21,9 @@ import XCTest
 // output: never
 
 class BusGossipsTests: XCTestCase {
-     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_driverHasRoute() {
+        let driver = Driver(route: [3, 1, 2, 3])
+        
+        XCTAssertEqual(driver.route, [3, 1, 2, 3])
     }
 }

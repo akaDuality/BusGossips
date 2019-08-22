@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class Driver {
+    let route: [Int]
+    
+    init(route: [Int]) {
+        self.route = route
+    }
+}
