@@ -49,6 +49,8 @@ class CityTests: XCTestCase {
     
     let driver1 = Driver(route: [3, 1, 2, 3])
     let driver2 = Driver(route: [3, 2, 3, 1])
+    let driver3 = Driver(route: [4, 2, 3, 4, 5])
+    
     
     func test_cityHasBusDriver() {
         let city = City(drivers: [driver1])
@@ -72,5 +74,14 @@ class CityTests: XCTestCase {
         let city = City(drivers: [driver1, driver2])
         
         XCTAssertEqual([1, 2, 3], city.allStops)
+    }
+    
+    func test_cityKnowsDriversOnSampeStops() {
+        let city = City(drivers: [driver1, driver2, driver3])
+        
+        XCTAssertEqual([[driver1, driver2]], city.driversAtSameStops(minute: 0))
+        XCTAssertEqual([[driver2, driver3]], city.driversAtSameStops(minute: 1))
+        XCTAssertEqual([[driver2, driver3]], city.driversAtSameStops(minute: 2))
+        XCTAssertEqual([], city.driversAtSameStops(minute: 3))
     }
 }

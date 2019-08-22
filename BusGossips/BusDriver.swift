@@ -16,6 +16,12 @@ struct Driver: Equatable {
     }
 }
 
+extension Driver: CustomStringConvertible {
+    var description: String {
+        return "Driver: \(route)"
+    }
+}
+
 class City {
     init(drivers: [Driver]) {
         self.allDrivers = drivers
@@ -38,5 +44,21 @@ class City {
         }
         
         return Array(stops).sorted()
+    }
+    
+    func driversAtSameStops(minute: Int) -> [[Driver]] {
+        var pairs = [[Driver]]()
+        
+        for stop in allStops {
+            let commonDrivers = drivers(atStop: stop, minute: minute)
+            
+            guard commonDrivers.count > 1 else {
+                continue
+            }
+                
+            pairs.append(commonDrivers)
+        }
+        
+        return pairs
     }
 }
