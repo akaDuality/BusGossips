@@ -63,6 +63,15 @@ class BusGossipsTests: XCTestCase {
         
         XCTAssertEqual(2, driver.gossips.count)
     }
+    
+    func test_driverIsnotInterestedInKnownGossip() {
+        let driver2 = Driver(route: [3, 2, 3, 1])
+        
+        driver.hearGossips(from: driver2)
+        driver.hearGossips(from: driver2) // Repeat gossip
+        
+        XCTAssertEqual(2, driver.gossips.count)
+    }
 }
 
 class CityTests: XCTestCase {
