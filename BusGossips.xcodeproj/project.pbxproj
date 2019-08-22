@@ -10,10 +10,13 @@
 		1302AEBB230F0F6600BC45FD /* CityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302AEBA230F0F6600BC45FD /* CityTests.swift */; };
 		1302AEBD230F0F8C00BC45FD /* StopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302AEBC230F0F8C00BC45FD /* StopTests.swift */; };
 		1302AEBF230F0FA300BC45FD /* ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302AEBE230F0FA300BC45FD /* ScheduleTests.swift */; };
+		1302AEC1230F0FE300BC45FD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302AEC0230F0FE300BC45FD /* City.swift */; };
+		1302AEC3230F0FF700BC45FD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302AEC2230F0FF700BC45FD /* Schedule.swift */; };
+		1302AEC5230F100800BC45FD /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302AEC4230F100800BC45FD /* Stop.swift */; };
 		138D2026230E9E7B00A80E8F /* BusGossips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138D201C230E9E7B00A80E8F /* BusGossips.framework */; };
 		138D202B230E9E7B00A80E8F /* DriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D202A230E9E7B00A80E8F /* DriverTests.swift */; };
 		138D202D230E9E7B00A80E8F /* BusGossips.h in Headers */ = {isa = PBXBuildFile; fileRef = 138D201F230E9E7B00A80E8F /* BusGossips.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		138D2037230E9F2000A80E8F /* BusDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D2036230E9F2000A80E8F /* BusDriver.swift */; };
+		138D2037230E9F2000A80E8F /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D2036230E9F2000A80E8F /* Driver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,13 +33,16 @@
 		1302AEBA230F0F6600BC45FD /* CityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTests.swift; sourceTree = "<group>"; };
 		1302AEBC230F0F8C00BC45FD /* StopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopTests.swift; sourceTree = "<group>"; };
 		1302AEBE230F0FA300BC45FD /* ScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTests.swift; sourceTree = "<group>"; };
+		1302AEC0230F0FE300BC45FD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		1302AEC2230F0FF700BC45FD /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		1302AEC4230F100800BC45FD /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		138D201C230E9E7B00A80E8F /* BusGossips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BusGossips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		138D201F230E9E7B00A80E8F /* BusGossips.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusGossips.h; sourceTree = "<group>"; };
 		138D2020230E9E7B00A80E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138D2025230E9E7B00A80E8F /* BusGossipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusGossipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		138D202A230E9E7B00A80E8F /* DriverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTests.swift; sourceTree = "<group>"; };
 		138D202C230E9E7B00A80E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		138D2036230E9F2000A80E8F /* BusDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDriver.swift; sourceTree = "<group>"; };
+		138D2036230E9F2000A80E8F /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				138D201F230E9E7B00A80E8F /* BusGossips.h */,
-				138D2036230E9F2000A80E8F /* BusDriver.swift */,
+				138D2036230E9F2000A80E8F /* Driver.swift */,
+				1302AEC0230F0FE300BC45FD /* City.swift */,
+				1302AEC2230F0FF700BC45FD /* Schedule.swift */,
+				1302AEC4230F100800BC45FD /* Stop.swift */,
 				138D2020230E9E7B00A80E8F /* Info.plist */,
 			);
 			path = BusGossips;
@@ -207,7 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				138D2037230E9F2000A80E8F /* BusDriver.swift in Sources */,
+				1302AEC3230F0FF700BC45FD /* Schedule.swift in Sources */,
+				1302AEC1230F0FE300BC45FD /* City.swift in Sources */,
+				138D2037230E9F2000A80E8F /* Driver.swift in Sources */,
+				1302AEC5230F100800BC45FD /* Stop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
