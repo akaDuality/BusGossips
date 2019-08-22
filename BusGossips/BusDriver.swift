@@ -126,17 +126,19 @@ class Schedule {
                 stop.exchangeGossips()
             }
             
-            // Check drivers
-            let maxGossipsCount = city.allDrivers.count
-            let driversThatKnewEverything = city.allDrivers
-                .filter { $0.gossips.count == maxGossipsCount }
-            
-            if driversThatKnewEverything.count == city.allDrivers.count {
+            if allDriversKnewEverything() {
                 return "\(minute + 1)"
             }
-            
         }
         
         return "never"
+    }
+    
+    func allDriversKnewEverything() -> Bool {
+        let maxGossipsCount = city.allDrivers.count
+        let driversThatKnewEverything = city.allDrivers
+            .filter { $0.gossips.count == maxGossipsCount }
+        
+        return driversThatKnewEverything.count == city.allDrivers.count
     }
 }
