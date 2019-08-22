@@ -12,7 +12,7 @@ class Driver {
     let route: [Int]
     var gossips = Set<String>()
     
-    func stop(at minute: Int) -> Int {
+    func stop(atMinute minute: Int) -> Int {
         return route[minute % route.count]
     }
     

@@ -7,13 +7,10 @@
 //
 
 import XCTest
-
 @testable import BusGossips
-class MainTaskTests: XCTestCase {
 
-    // Main task
-    // http://kata-log.rocks/gossiping-bus-drivers-kata
-    
+// http://kata-log.rocks/gossiping-bus-drivers-kata
+class MainTaskTests: XCTestCase {
     func test_whenMaxGossipsCountForThreeDriversExchangedDriversStops() {
         let driver1 = Driver(route: [3, 1, 2, 3])
         let driver2 = Driver(route: [3, 2, 3, 1])

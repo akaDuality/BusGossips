@@ -22,20 +22,29 @@ class DriverTests: XCTestCase {
     }
     
     func test_driverMovesToNextStop() {
-        XCTAssertEqual(3, driver.stop(at: 0))
-        XCTAssertEqual(1, driver.stop(at: 1))
-        XCTAssertEqual(2, driver.stop(at: 2))
-        XCTAssertEqual(3, driver.stop(at: 3))
+        XCTAssertEqual(3, driver.stop(atMinute: 0))
+        XCTAssertEqual(1, driver.stop(atMinute: 1))
+        XCTAssertEqual(2, driver.stop(atMinute: 2))
+        XCTAssertEqual(3, driver.stop(atMinute: 3))
     }
     
     func test_driverRouteIsRepeated() {
-        XCTAssertEqual(3, driver.stop(at: 4))
-        XCTAssertEqual(1, driver.stop(at: 5))
-        XCTAssertEqual(2, driver.stop(at: 6))
-        XCTAssertEqual(3, driver.stop(at: 7))
+        XCTAssertEqual(3, driver.stop(atMinute: 4))
+        XCTAssertEqual(1, driver.stop(atMinute: 5))
+        XCTAssertEqual(2, driver.stop(atMinute: 6))
+        XCTAssertEqual(3, driver.stop(atMinute: 7))
+    }
+}
+
+class DriverGossipsTests: XCTestCase {
+    var driver1: Driver!
+    var driver2: Driver!
+    
+    override func setUp() {
+        driver1 = Driver(route: [3, 1, 2, 3])
+        driver2 = Driver(route: [3, 2, 3, 1])
     }
     
-    // MARK: - Gossips
     func test_driverHasGossip() {
         let gossip = "1st gossip"
         let driver = Driver(route: [1, 2], gossip: gossip)
@@ -44,20 +53,16 @@ class DriverTests: XCTestCase {
     }
     
     func test_driverCanKnowNewGossip() {
-        let driver2 = Driver(route: [3, 2, 3, 1])
+        driver1.hearGossips(from: driver2)
         
-        driver.hearGossips(from: driver2)
-        
-        XCTAssertEqual(2, driver.gossips.count)
+        XCTAssertEqual(2, driver1.gossips.count)
     }
     
-    func test_driverIsnotInterestedInKnownGossip() {
-        let driver2 = Driver(route: [3, 2, 3, 1])
+    func test_driverIsNotInterestedInKnownGossip() {
+        driver1.hearGossips(from: driver2)
+        driver1.hearGossips(from: driver2) // Repeat gossip
         
-        driver.hearGossips(from: driver2)
-        driver.hearGossips(from: driver2) // Repeat gossip
-        
-        XCTAssertEqual(2, driver.gossips.count)
+        XCTAssertEqual(2, driver1.gossips.count)
     }
 }
 
