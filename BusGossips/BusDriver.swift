@@ -16,6 +16,6 @@ class Driver {
     }
     
     func stop(at minute: Int) -> Int {
-        return route[minute]
+        return route[minute % route.count]
     }
 }
