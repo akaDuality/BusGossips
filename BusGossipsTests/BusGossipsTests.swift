@@ -107,10 +107,10 @@ class CityTests: XCTestCase {
     func test_cityKnowsDriversOnSampeStops() {
         let city = City(drivers: [driver1, driver2, driver3])
         
-        XCTAssertEqual([[driver1, driver2]], city.driversAtSameStops(minute: 0))
-        XCTAssertEqual([[driver2, driver3]], city.driversAtSameStops(minute: 1))
-        XCTAssertEqual([[driver2, driver3]], city.driversAtSameStops(minute: 2))
-        XCTAssertEqual([], city.driversAtSameStops(minute: 3))
+        XCTAssertEqual([Stop(drivers: [driver1, driver2])], city.stopsWithSeveralDrivers(minute: 0))
+        XCTAssertEqual([Stop(drivers: [driver2, driver3])], city.stopsWithSeveralDrivers(minute: 1))
+        XCTAssertEqual([Stop(drivers: [driver2, driver3])], city.stopsWithSeveralDrivers(minute: 2))
+        XCTAssertEqual([], city.stopsWithSeveralDrivers(minute: 3))
     }
     
     // MARK: - Gossips

@@ -56,18 +56,19 @@ class City {
         return Array(stops).sorted()
     }
     
-    func driversAtSameStops(minute: Int) -> [[Driver]] {
-        let pairs = allStops
+    func stopsWithSeveralDrivers(minute: Int) -> [Stop] {
+        let stopsWithDrivers = allStops
             .map { stop in
                 drivers(atStop: stop,
                         minute: minute) }
             .filter { driversOnStop in
                 driversOnStop.count > 1 }
+            .map { Stop(drivers: $0) }
         
-        return pairs
+        return stopsWithDrivers
     }
 }
 
-struct Stop {
+struct Stop: Equatable {
     let drivers: [Driver]
 }
