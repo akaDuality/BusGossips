@@ -10,6 +10,7 @@
 		138D2026230E9E7B00A80E8F /* BusGossips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138D201C230E9E7B00A80E8F /* BusGossips.framework */; };
 		138D202B230E9E7B00A80E8F /* BusGossipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D202A230E9E7B00A80E8F /* BusGossipsTests.swift */; };
 		138D202D230E9E7B00A80E8F /* BusGossips.h in Headers */ = {isa = PBXBuildFile; fileRef = 138D201F230E9E7B00A80E8F /* BusGossips.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		138D2037230E9F2000A80E8F /* BusDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D2036230E9F2000A80E8F /* BusDriver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		138D2025230E9E7B00A80E8F /* BusGossipsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusGossipsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		138D202A230E9E7B00A80E8F /* BusGossipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusGossipsTests.swift; sourceTree = "<group>"; };
 		138D202C230E9E7B00A80E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		138D2036230E9F2000A80E8F /* BusDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDriver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				138D201F230E9E7B00A80E8F /* BusGossips.h */,
+				138D2036230E9F2000A80E8F /* BusDriver.swift */,
 				138D2020230E9E7B00A80E8F /* Info.plist */,
 			);
 			path = BusGossips;
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					138D201B230E9E7B00A80E8F = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					138D2024230E9E7B00A80E8F = {
 						CreatedOnToolsVersion = 10.3;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				138D2037230E9F2000A80E8F /* BusDriver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 		138D2031230E9E7B00A80E8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -357,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.akaDuality.BusGossips;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +372,7 @@
 		138D2032230E9E7B00A80E8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +397,7 @@
 		138D2034230E9E7B00A80E8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BusGossipsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -406,6 +415,7 @@
 		138D2035230E9E7B00A80E8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BusGossipsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
