@@ -125,6 +125,16 @@ class Schedule {
             for stop in city.stopsWithSeveralDrivers(minute: minute) {
                 stop.exchangeGossips()
             }
+            
+            // Check drivers
+            let maxGossipsCount = city.allDrivers.count
+            let driversThatKnewEverything = city.allDrivers
+                .filter { $0.gossips.count == maxGossipsCount }
+            
+            if driversThatKnewEverything.count == city.allDrivers.count {
+                return "\(minute + 1)"
+            }
+            
         }
         
         return "1"
