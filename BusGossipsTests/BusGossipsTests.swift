@@ -9,6 +9,8 @@
 import XCTest
 @testable import BusGossips
 
+// http://kata-log.rocks/gossiping-bus-drivers-kata
+
 // ver 1
 // 3 1 2 3
 // 3 2 3 1
