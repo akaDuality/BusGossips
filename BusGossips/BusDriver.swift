@@ -19,3 +19,11 @@ class Driver {
         return route[minute % route.count]
     }
 }
+
+class City {
+    init(drivers: [Driver]) {
+        self.drivers = drivers
+    }
+    
+    let drivers: [Driver]
+}

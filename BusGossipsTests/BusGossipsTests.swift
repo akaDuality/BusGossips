@@ -42,3 +42,12 @@ class BusGossipsTests: XCTestCase {
         XCTAssertEqual(3, driver.stop(at: 7))
     }
 }
+
+class CityTests: XCTestCase {
+    
+    func test_cityHasBusDriver() {
+        let city = City(drivers: [Driver(route: [3, 1, 2, 3])])
+        
+        XCTAssertEqual(1, city.drivers.count)
+    }
+}
