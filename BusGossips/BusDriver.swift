@@ -121,10 +121,8 @@ class Schedule {
     
     @discardableResult
     func moveDriversAllDay() -> String {
-        for minute in 0..<(60 * 8) {
-            for stop in city.stopsWithSeveralDrivers(minute: minute) {
-                stop.exchangeGossips()
-            }
+        for minute in 0..<dayLengthInMinutes {
+            exchangeGossips(minute: minute)
             
             if allDriversKnewEverything() {
                 return "\(minute + 1)"
@@ -134,7 +132,15 @@ class Schedule {
         return "never"
     }
     
-    func allDriversKnewEverything() -> Bool {
+    private let dayLengthInMinutes = 60 * 8
+    
+    private func exchangeGossips(minute: Int) {
+        for stop in city.stopsWithSeveralDrivers(minute: minute) {
+            stop.exchangeGossips()
+        }
+    }
+    
+    private func allDriversKnewEverything() -> Bool {
         let maxGossipsCount = city.allDrivers.count
         let driversThatKnewEverything = city.allDrivers
             .filter { $0.gossips.count == maxGossipsCount }
