@@ -117,12 +117,26 @@ class CityTests: XCTestCase {
 }
 
 class StopTests: XCTestCase {
-    let driver1 = Driver(route: [3, 1, 2, 3])
-    let driver2 = Driver(route: [3, 2, 3, 1])
+    var driver1: Driver!
+    var driver2: Driver!
+    
+    override func setUp() {
+        driver1 = Driver(route: [3, 1, 2, 3])
+        driver2 = Driver(route: [3, 2, 3, 1])
+    }
     
     func test_stopHasDrivers() {
-        let stops = Stop(drivers: [driver1, driver2])
+        let stop = Stop(drivers: [driver1, driver2])
         
-        XCTAssertEqual(stops.drivers.count, 2)
+        XCTAssertEqual(stop.drivers.count, 2)
+    }
+    
+    func test_twoDriversExchangeGossips() {
+        let stop = Stop(drivers: [driver1, driver2])
+        
+        stop.exchangeGossips()
+        
+        XCTAssertEqual(2, driver1.gossips.count)
+        XCTAssertEqual(2, driver2.gossips.count)
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Driver: Equatable {
+class Driver {
     let route: [Int]
     var gossips = Set<String>()
     
@@ -21,8 +21,15 @@ struct Driver: Equatable {
         self.gossips = [gossip]
     }
     
-    mutating func hearGossips(from driver: Driver) {
+    func hearGossips(from driver: Driver) {
         gossips = gossips.union(driver.gossips)
+    }
+}
+
+extension Driver: Equatable {
+    static func == (lhs: Driver, rhs: Driver) -> Bool {
+        return lhs.route == rhs.route
+            && lhs.gossips == rhs.gossips
     }
 }
 
@@ -69,6 +76,25 @@ class City {
     }
 }
 
-struct Stop: Equatable {
+class Stop {
+    
+    init(drivers: [Driver]) {
+        self.drivers = drivers
+    }
+    
     let drivers: [Driver]
+    
+    func exchangeGossips() {
+        let driver1 = drivers.first!
+        let driver2 = drivers.last!
+        
+        driver1.hearGossips(from: driver2)
+        driver2.hearGossips(from: driver1)
+    }
+}
+
+extension Stop: Equatable {
+    static func == (lhs: Stop, rhs: Stop) -> Bool {
+        return lhs.drivers == rhs.drivers
+    }
 }
