@@ -67,3 +67,7 @@ class City {
         return pairs
     }
 }
+
+struct Stop {
+    let drivers: [Driver]
+}

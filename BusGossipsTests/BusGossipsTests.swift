@@ -22,7 +22,7 @@ import XCTest
 // 5 2 8
 // output: never
 
-class BusGossipsTests: XCTestCase {
+class DriverTests: XCTestCase {
     
     var driver: Driver!
     
@@ -80,7 +80,6 @@ class CityTests: XCTestCase {
     let driver2 = Driver(route: [3, 2, 3, 1])
     let driver3 = Driver(route: [4, 2, 3, 4, 5])
     
-    
     func test_cityHasBusDriver() {
         let city = City(drivers: [driver1])
         
@@ -115,4 +114,15 @@ class CityTests: XCTestCase {
     }
     
     // MARK: - Gossips
+}
+
+class StopTests: XCTestCase {
+    let driver1 = Driver(route: [3, 1, 2, 3])
+    let driver2 = Driver(route: [3, 2, 3, 1])
+    
+    func test_stopHasDrivers() {
+        let stops = Stop(drivers: [driver1, driver2])
+        
+        XCTAssertEqual(stops.drivers.count, 2)
+    }
 }
