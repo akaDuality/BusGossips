@@ -59,6 +59,12 @@ class CityTests: XCTestCase {
     func test_cityReturnsDriversByStopNumber() {
         let city = City(drivers: [driver1, driver2])
 
-        XCTAssertEqual([driver1, driver2], city.drivers(atStop: 1))
+        XCTAssertEqual([driver1, driver2], city.drivers(atStop: 3))
+    }
+    
+    func test_cityReturnsDriversByStopNumberAndMinute() {
+        let city = City(drivers: [driver1, driver2])
+
+        XCTAssertEqual([driver1], city.drivers(atStop: 1, minute: 1))
     }
 }

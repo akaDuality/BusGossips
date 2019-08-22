@@ -23,7 +23,8 @@ class City {
     
     let allDrivers: [Driver]
     
-    func drivers(atStop: Int) -> [Driver] {
+    func drivers(atStop currentStop: Int, minute: Int = 0) -> [Driver] {
         return allDrivers
+            .filter { $0.stop(at: minute) == currentStop }
     }
 }
