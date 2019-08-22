@@ -10,9 +10,15 @@ import Foundation
 
 struct Driver: Equatable {
     let route: [Int]
+    let gossips: [String]
     
     func stop(at minute: Int) -> Int {
         return route[minute % route.count]
+    }
+    
+    init(route: [Int], gossip: String = UUID().uuidString) {
+        self.route = route
+        self.gossips = [gossip]
     }
 }
 

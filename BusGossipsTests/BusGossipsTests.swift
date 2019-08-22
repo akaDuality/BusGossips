@@ -43,6 +43,14 @@ class BusGossipsTests: XCTestCase {
         XCTAssertEqual(2, driver.stop(at: 6))
         XCTAssertEqual(3, driver.stop(at: 7))
     }
+    
+    // MARK: - Gossips
+    func test_driverHasGossip() {
+        let gossip = "1st gossip"
+        let driver = Driver(route: [1, 2], gossip: gossip)
+        
+        XCTAssertEqual(driver.gossips, [gossip])
+    }
 }
 
 class CityTests: XCTestCase {
@@ -84,4 +92,8 @@ class CityTests: XCTestCase {
         XCTAssertEqual([[driver2, driver3]], city.driversAtSameStops(minute: 2))
         XCTAssertEqual([], city.driversAtSameStops(minute: 3))
     }
+    
+    // MARK: - Gossips
+    
+    
 }
