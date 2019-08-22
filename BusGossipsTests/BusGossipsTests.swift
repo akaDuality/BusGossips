@@ -47,16 +47,16 @@ class BusGossipsTests: XCTestCase {
 
 class CityTests: XCTestCase {
     
+    let driver1 = Driver(route: [3, 1, 2, 3])
+    let driver2 = Driver(route: [3, 2, 3, 1])
+    
     func test_cityHasBusDriver() {
-        let city = City(drivers: [Driver(route: [3, 1, 2, 3])])
+        let city = City(drivers: [driver1])
         
         XCTAssertEqual(1, city.allDrivers.count)
     }
     
     func test_cityReturnsDriversByStopNumber() {
-        let driver1 = Driver(route: [3, 1, 2, 3])
-        let driver2 = Driver(route: [3, 2, 3, 1])
-        
         let city = City(drivers: [driver1, driver2])
 
         XCTAssertEqual([driver1, driver2], city.drivers(atStop: 1))
