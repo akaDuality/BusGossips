@@ -27,4 +27,16 @@ class City {
         return allDrivers
             .filter { $0.stop(at: minute) == currentStop }
     }
+    
+    var allStops: [Int] {
+        var stops = Set<Int>()
+        
+        for driver in allDrivers {
+            for stop in driver.route {
+                stops.insert(stop)
+            }
+        }
+        
+        return Array(stops).sorted()
+    }
 }

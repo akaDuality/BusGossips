@@ -67,4 +67,10 @@ class CityTests: XCTestCase {
 
         XCTAssertEqual([driver1], city.drivers(atStop: 1, minute: 1))
     }
+    
+    func test_cityKnowsAboutAllStops() {
+        let city = City(drivers: [driver1, driver2])
+        
+        XCTAssertEqual([1, 2, 3], city.allStops)
+    }
 }
