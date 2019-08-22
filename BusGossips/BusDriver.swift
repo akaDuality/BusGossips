@@ -8,12 +8,8 @@
 
 import Foundation
 
-class Driver {
+struct Driver: Equatable {
     let route: [Int]
-    
-    init(route: [Int]) {
-        self.route = route
-    }
     
     func stop(at minute: Int) -> Int {
         return route[minute % route.count]
@@ -22,8 +18,12 @@ class Driver {
 
 class City {
     init(drivers: [Driver]) {
-        self.drivers = drivers
+        self.allDrivers = drivers
     }
     
-    let drivers: [Driver]
+    let allDrivers: [Driver]
+    
+    func drivers(atStop: Int) -> [Driver] {
+        return allDrivers
+    }
 }
