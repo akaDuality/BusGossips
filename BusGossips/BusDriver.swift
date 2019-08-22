@@ -33,12 +33,6 @@ extension Driver: Equatable {
     }
 }
 
-extension Driver: CustomStringConvertible {
-    var description: String {
-        return "Driver: \(route)"
-    }
-}
-
 class City {
     init(drivers: [Driver]) {
         self.allDrivers = drivers

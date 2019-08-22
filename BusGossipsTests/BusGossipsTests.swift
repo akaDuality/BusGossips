@@ -74,6 +74,12 @@ class DriverTests: XCTestCase {
     }
 }
 
+extension Driver: CustomStringConvertible {
+    public var description: String {
+        return "Driver: \(route)"
+    }
+}
+
 class CityTests: XCTestCase {
     
     let driver1 = Driver(route: [3, 1, 2, 3])
