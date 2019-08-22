@@ -119,11 +119,14 @@ class Schedule {
     
     let city: City
     
-    func moveDriversAllDay() {
+    @discardableResult
+    func moveDriversAllDay() -> String {
         for minute in 0..<(60 * 8) {
             for stop in city.stopsWithSeveralDrivers(minute: minute) {
                 stop.exchangeGossips()
             }
         }
+        
+        return "1"
     }
 }

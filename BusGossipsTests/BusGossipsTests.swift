@@ -168,8 +168,16 @@ class ScheduleTests: XCTestCase {
         XCTAssertEqual(schedule.city, city)
     }
     
-    func test_driversRoutesAllDay() {
+    func test_driversKnowsAllGossipsAtTheDaysEnd() {
         schedule.moveDriversAllDay()
         XCTAssertEqual(driver1.gossips.count, 2)
+        XCTAssertEqual(driver2.gossips.count, 2)
+    }
+    
+    func test_whenMaxGossipsCountExchangedDriversStops() {
+        let result = schedule.moveDriversAllDay()
+        
+        XCTAssertEqual(result, "1")
+        
     }
 }
