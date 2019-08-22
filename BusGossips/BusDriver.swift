@@ -47,17 +47,12 @@ class City {
     }
     
     func driversAtSameStops(minute: Int) -> [[Driver]] {
-        var pairs = [[Driver]]()
-        
-        for stop in allStops {
-            let commonDrivers = drivers(atStop: stop, minute: minute)
-            
-            guard commonDrivers.count > 1 else {
-                continue
-            }
-                
-            pairs.append(commonDrivers)
-        }
+        let pairs = allStops
+            .map { stop in
+                drivers(atStop: stop,
+                        minute: minute) }
+            .filter { driversOnStop in
+                driversOnStop.count > 1 }
         
         return pairs
     }
