@@ -14,4 +14,8 @@ class Driver {
     init(route: [Int]) {
         self.route = route
     }
+    
+    func stop(at minute: Int) -> Int {
+        return route[minute]
+    }
 }

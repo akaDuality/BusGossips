@@ -26,4 +26,13 @@ class BusGossipsTests: XCTestCase {
         
         XCTAssertEqual(driver.route, [3, 1, 2, 3])
     }
+    
+    func test_driverMovesToNextStop() {
+        let driver = Driver(route: [3, 1, 2, 3])
+        
+        XCTAssertEqual(3, driver.stop(at: 0))
+        XCTAssertEqual(1, driver.stop(at: 1))
+        XCTAssertEqual(2, driver.stop(at: 2))
+        XCTAssertEqual(3, driver.stop(at: 3))
+    }
 }
