@@ -19,15 +19,15 @@ class Stop {
     func exchangeGossips() {
         for i in 0..<drivers.count - 1 {
             let driver = drivers[i]
+            let otherDrivers: Array = drivers.suffix(drivers.count - i)
             
-            tellGossipToOtherDrivers(teller: driver, startFrom: i + 1)
+            tellGossip(from: driver,
+                       to: otherDrivers)
         }
     }
     
-    private func tellGossipToOtherDrivers(teller: Driver, startFrom startIndex: Int) {
-        for j in startIndex..<drivers.count {
-            let anotherDriver = drivers[j]
-            
+    private func tellGossip(from teller: Driver, to otherDrivers: [Driver]) {
+        for anotherDriver in otherDrivers {
             exchangeGossips(between: teller, and: anotherDriver)
         }
     }
