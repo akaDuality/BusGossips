@@ -13,6 +13,7 @@
 		1302AEC1230F0FE300BC45FD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302AEC0230F0FE300BC45FD /* City.swift */; };
 		1302AEC3230F0FF700BC45FD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302AEC2230F0FF700BC45FD /* Schedule.swift */; };
 		1302AEC5230F100800BC45FD /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302AEC4230F100800BC45FD /* Stop.swift */; };
+		1302AEC7230F106300BC45FD /* MainTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302AEC6230F106300BC45FD /* MainTaskTests.swift */; };
 		138D2026230E9E7B00A80E8F /* BusGossips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138D201C230E9E7B00A80E8F /* BusGossips.framework */; };
 		138D202B230E9E7B00A80E8F /* DriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D202A230E9E7B00A80E8F /* DriverTests.swift */; };
 		138D202D230E9E7B00A80E8F /* BusGossips.h in Headers */ = {isa = PBXBuildFile; fileRef = 138D201F230E9E7B00A80E8F /* BusGossips.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +37,7 @@
 		1302AEC0230F0FE300BC45FD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		1302AEC2230F0FF700BC45FD /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		1302AEC4230F100800BC45FD /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		1302AEC6230F106300BC45FD /* MainTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTaskTests.swift; sourceTree = "<group>"; };
 		138D201C230E9E7B00A80E8F /* BusGossips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BusGossips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		138D201F230E9E7B00A80E8F /* BusGossips.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusGossips.h; sourceTree = "<group>"; };
 		138D2020230E9E7B00A80E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				1302AEBA230F0F6600BC45FD /* CityTests.swift */,
 				1302AEBC230F0F8C00BC45FD /* StopTests.swift */,
 				1302AEBE230F0FA300BC45FD /* ScheduleTests.swift */,
+				1302AEC6230F106300BC45FD /* MainTaskTests.swift */,
 				138D202C230E9E7B00A80E8F /* Info.plist */,
 			);
 			path = BusGossipsTests;
@@ -229,6 +232,7 @@
 			files = (
 				1302AEBD230F0F8C00BC45FD /* StopTests.swift in Sources */,
 				1302AEBB230F0F6600BC45FD /* CityTests.swift in Sources */,
+				1302AEC7230F106300BC45FD /* MainTaskTests.swift in Sources */,
 				1302AEBF230F0FA300BC45FD /* ScheduleTests.swift in Sources */,
 				138D202B230E9E7B00A80E8F /* DriverTests.swift in Sources */,
 			);
