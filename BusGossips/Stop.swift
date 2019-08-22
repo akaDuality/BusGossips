@@ -17,9 +17,8 @@ class Stop {
     let drivers: [Driver]
     
     func exchangeGossips() {
-        for i in 0..<drivers.count - 1 {
-            let driver = drivers[i]
-            let otherDrivers: Array = drivers.suffix(drivers.count - i)
+        for (index, driver) in drivers.enumerated() {
+            let otherDrivers: Array = drivers.suffix(drivers.count - index)
             
             tellGossip(from: driver,
                        to: otherDrivers)
