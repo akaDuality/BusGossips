@@ -17,11 +17,16 @@ class Stop {
     let drivers: [Driver]
     
     func exchangeGossips() {
-        let driver1 = drivers.first!
-        let driver2 = drivers.last!
-        
-        driver1.hearGossips(from: driver2)
-        driver2.hearGossips(from: driver1)
+        for i in 0..<drivers.count - 1 {
+            let driver = drivers[i]
+            
+            for j in (i + 1)..<drivers.count {
+                let anotherDriver = drivers[j]
+                
+                driver.hearGossips(from: anotherDriver)
+                anotherDriver.hearGossips(from: driver)
+            }
+        }
     }
 }
 

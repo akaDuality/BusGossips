@@ -32,4 +32,15 @@ class StopTests: XCTestCase {
         XCTAssertEqual(2, driver1.gossips.count)
         XCTAssertEqual(2, driver2.gossips.count)
     }
+    
+    func test_threeDriverExchangeGossips() {
+        let driver3 = Driver(route: [3])
+        let stop = Stop(drivers: [driver1, driver2, driver3])
+        
+        stop.exchangeGossips()
+        
+        XCTAssertEqual(3, driver1.gossips.count)
+        XCTAssertEqual(3, driver2.gossips.count)
+        XCTAssertEqual(3, driver3.gossips.count)
+    }
 }
