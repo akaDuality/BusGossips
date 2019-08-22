@@ -137,6 +137,6 @@ class Schedule {
             
         }
         
-        return "1"
+        return "never"
     }
 }
