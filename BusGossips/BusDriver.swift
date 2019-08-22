@@ -83,6 +83,12 @@ class City {
     }
 }
 
+extension City: Equatable {
+    static func == (lhs: City, rhs: City) -> Bool {
+        return lhs.allDrivers == rhs.allDrivers
+    }
+}
+
 class Stop {
     
     init(drivers: [Driver]) {
@@ -104,4 +110,13 @@ extension Stop: Equatable {
     static func == (lhs: Stop, rhs: Stop) -> Bool {
         return lhs.drivers == rhs.drivers
     }
+}
+
+class Schedule {
+    init(city: City) {
+        self.city = city
+    }
+    
+    let city: City
+    var minutes = 0
 }

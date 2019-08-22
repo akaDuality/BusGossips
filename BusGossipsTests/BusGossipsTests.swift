@@ -149,3 +149,23 @@ class StopTests: XCTestCase {
         XCTAssertEqual(2, driver2.gossips.count)
     }
 }
+
+class ScheduleTests: XCTestCase {
+    var driver1: Driver!
+    var driver2: Driver!
+    var city: City!
+    
+    override func setUp() {
+        driver1 = Driver(route: [3, 1, 2, 3])
+        driver2 = Driver(route: [3, 2, 3, 1])
+        
+        city = City(drivers: [driver1, driver2])
+    }
+    
+    func test_scheduleHasCityAndTimer() {
+        let schedule = Schedule(city: city)
+        
+        XCTAssertEqual(schedule.city, city)
+        XCTAssertEqual(schedule.minutes, 0)
+    }
+}
