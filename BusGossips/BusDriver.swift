@@ -74,6 +74,13 @@ class City {
         
         return stopsWithDrivers
     }
+    
+    func exchangeGossipes() {
+        let stops = stopsWithSeveralDrivers(minute: 0)
+        for stop in stops {
+            stop.exchangeGossips()
+        }
+    }
 }
 
 class Stop {

@@ -114,6 +114,15 @@ class CityTests: XCTestCase {
     }
     
     // MARK: - Gossips
+    func test_driversExchangesGossipesOnCommonStops() {
+        let city = City(drivers: [driver1, driver2, driver3])
+        
+        city.exchangeGossipes()
+        
+        XCTAssertEqual(driver1.gossips.count, 2)
+        XCTAssertEqual(driver2.gossips.count, 2)
+        XCTAssertEqual(driver3.gossips.count, 1)
+    }
 }
 
 class StopTests: XCTestCase {
