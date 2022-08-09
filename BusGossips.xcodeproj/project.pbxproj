@@ -18,6 +18,7 @@
 		138D202B230E9E7B00A80E8F /* DriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D202A230E9E7B00A80E8F /* DriverTests.swift */; };
 		138D202D230E9E7B00A80E8F /* BusGossips.h in Headers */ = {isa = PBXBuildFile; fileRef = 138D201F230E9E7B00A80E8F /* BusGossips.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		138D2037230E9F2000A80E8F /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D2036230E9F2000A80E8F /* Driver.swift */; };
+		1EC89AA428A228AB0034FCD1 /* DriverGossipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC89AA328A228AB0034FCD1 /* DriverGossipsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		138D202A230E9E7B00A80E8F /* DriverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTests.swift; sourceTree = "<group>"; };
 		138D202C230E9E7B00A80E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138D2036230E9F2000A80E8F /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		1EC89AA328A228AB0034FCD1 /* DriverGossipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverGossipsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				138D202A230E9E7B00A80E8F /* DriverTests.swift */,
+				1EC89AA328A228AB0034FCD1 /* DriverGossipsTests.swift */,
 				1302AEBA230F0F6600BC45FD /* CityTests.swift */,
 				1302AEBC230F0F8C00BC45FD /* StopTests.swift */,
 				1302AEBE230F0FA300BC45FD /* ScheduleTests.swift */,
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EC89AA428A228AB0034FCD1 /* DriverGossipsTests.swift in Sources */,
 				1302AEBD230F0F8C00BC45FD /* StopTests.swift in Sources */,
 				1302AEBB230F0F6600BC45FD /* CityTests.swift in Sources */,
 				1302AEC7230F106300BC45FD /* MainTaskTests.swift in Sources */,
