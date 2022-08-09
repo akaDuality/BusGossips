@@ -19,6 +19,7 @@
 		138D202D230E9E7B00A80E8F /* BusGossips.h in Headers */ = {isa = PBXBuildFile; fileRef = 138D201F230E9E7B00A80E8F /* BusGossips.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		138D2037230E9F2000A80E8F /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D2036230E9F2000A80E8F /* Driver.swift */; };
 		1EC89AA428A228AB0034FCD1 /* DriverGossipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC89AA328A228AB0034FCD1 /* DriverGossipsTests.swift */; };
+		1ED48DA228A2953800D77F09 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1ED48DA128A2953800D77F09 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		138D202C230E9E7B00A80E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138D2036230E9F2000A80E8F /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		1EC89AA328A228AB0034FCD1 /* DriverGossipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverGossipsTests.swift; sourceTree = "<group>"; };
+		1ED48DA128A2953800D77F09 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		138D201E230E9E7B00A80E8F /* BusGossips */ = {
 			isa = PBXGroup;
 			children = (
+				1ED48DA128A2953800D77F09 /* README.md */,
 				138D201F230E9E7B00A80E8F /* BusGossips.h */,
 				138D2036230E9F2000A80E8F /* Driver.swift */,
 				1302AEC0230F0FE300BC45FD /* City.swift */,
@@ -205,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ED48DA228A2953800D77F09 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
